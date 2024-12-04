@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.1 on darwin)" generated="2024-12-02T13:34:56.366301" rpa="false" schemaversion="5">
+<suite id="s1" name="Google Search" source="/Users/hbrasileiro/Desktop/idp2024b/robot/tests/google_search.robot">
+<test id="s1-t1" name="Test Google Search For Robot Framework" line="8">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:34:56.464992" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:34:56.464884" elapsed="3.627097"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:00.094145" elapsed="0.390179"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:00.484706" elapsed="0.029443"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:34:56.464539" elapsed="4.049731"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:00.514941" level="INFO">Typing text 'Robot Framework' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:00.514794" elapsed="0.158373"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:00.678841" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:35:00.982280" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:35:00.982391" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:00.673646" elapsed="2.477750"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:03.151779" elapsed="0.018100"/>
+</kw>
+<arg>Robot Framework</arg>
+<status status="PASS" start="2024-12-02T13:35:00.514544" elapsed="2.655435"/>
+</kw>
+<kw name="Validate First Result Text" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:03.187320" level="INFO">${result} = Robot Framework</msg>
+<var>${result}</var>
+<arg>${FIRST_RESULT_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:03.170424" elapsed="0.016925"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-02T13:35:03.187534" elapsed="0.000180"/>
+</kw>
+<arg>Robot Framework</arg>
+<status status="PASS" start="2024-12-02T13:35:03.170220" elapsed="0.017547"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:03.188080" elapsed="0.093134"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:34:56.464228" elapsed="6.817184"/>
+</test>
+<test id="s1-t2" name="Test Google Search For Selenium" line="15">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:03.282873" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:03.282502" elapsed="2.845135"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:06.130011" elapsed="0.373526"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:06.503705" elapsed="0.016435"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:03.281856" elapsed="3.238550"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:06.521975" level="INFO">Typing text 'Selenium' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:06.521738" elapsed="0.126830"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:06.650204" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:35:06.925551" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:35:06.925622" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:06.649113" elapsed="1.384868"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:08.034110" elapsed="0.012801"/>
+</kw>
+<arg>Selenium</arg>
+<status status="PASS" start="2024-12-02T13:35:06.521201" elapsed="1.525873"/>
+</kw>
+<kw name="Validate First Result Text" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:08.072761" level="INFO">${result} = Selenium</msg>
+<var>${result}</var>
+<arg>${FIRST_RESULT_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:08.047710" elapsed="0.025075"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-02T13:35:08.072901" elapsed="0.000124"/>
+</kw>
+<arg>Selenium</arg>
+<status status="PASS" start="2024-12-02T13:35:08.047415" elapsed="0.025649"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:08.073305" elapsed="0.100567"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:03.281594" elapsed="4.892862"/>
+</test>
+<test id="s1-t3" name="Test Google Search With Empty Term" line="22">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:08.176746" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:08.176508" elapsed="2.471022"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:10.648152" elapsed="0.376227"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:11.024602" elapsed="0.013040"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:08.175798" elapsed="2.861940"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<msg time="2024-12-02T13:35:11.038179" level="FAIL">Keyword 'keywords.Search For Term' expected 1 argument, got 0.</msg>
+<status status="FAIL" start="2024-12-02T13:35:11.037965" elapsed="0.000245">Keyword 'keywords.Search For Term' expected 1 argument, got 0.</status>
+</kw>
+<kw name="Validate Search Results Not Found" owner="keywords">
+<status status="NOT RUN" start="2024-12-02T13:35:11.038390" elapsed="0.000015"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-12-02T13:35:11.038485" elapsed="0.000013"/>
+</kw>
+<status status="FAIL" start="2024-12-02T13:35:08.174995" elapsed="2.863642">Keyword 'keywords.Search For Term' expected 1 argument, got 0.</status>
+</test>
+<test id="s1-t4" name="Test Google Search For Long Query" line="29">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:11.039325" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:11.039186" elapsed="2.665920"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:13.705928" elapsed="0.389551"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:14.095919" elapsed="0.014218"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:11.038999" elapsed="3.071252"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:14.110899" level="INFO">Typing text 'Lorem ipsum dolor sit amet consectetur adipiscing elit' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:14.110767" elapsed="0.148064"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:14.262646" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:35:14.540933" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:35:14.541048" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:14.259234" elapsed="1.915746"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:16.175153" elapsed="0.016450"/>
+</kw>
+<arg>Lorem ipsum dolor sit amet consectetur adipiscing elit</arg>
+<status status="PASS" start="2024-12-02T13:35:14.110546" elapsed="2.081154"/>
+</kw>
+<kw name="Validate First Result Text" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:16.206747" level="INFO">${result} = Lorem ipsum – Wikipédia, a enciclopédia livre</msg>
+<var>${result}</var>
+<arg>${FIRST_RESULT_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:16.192161" elapsed="0.014847"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-02T13:35:16.207239" elapsed="0.000224"/>
+</kw>
+<arg>Lorem</arg>
+<status status="PASS" start="2024-12-02T13:35:16.191950" elapsed="0.015557"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:16.207630" elapsed="0.086347"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:11.038796" elapsed="5.255416"/>
+</test>
+<test id="s1-t5" name="Test Google Search For Special Characters" line="36">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:16.295198" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:16.295019" elapsed="2.702942"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:18.998460" elapsed="0.376243"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:19.374863" elapsed="0.014082"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:16.294816" elapsed="3.094299"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:19.391813" level="INFO">Typing text '@#$%^&amp;*()_+12345' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:19.391626" elapsed="0.113969"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:19.507786" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:35:19.806643" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:35:19.806950" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:19.507293" elapsed="1.952175"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:21.460281" elapsed="0.024089"/>
+</kw>
+<arg>@#$%^&amp;*()_+12345</arg>
+<status status="PASS" start="2024-12-02T13:35:19.390312" elapsed="2.094162"/>
+</kw>
+<kw name="Validate Search Results Not Found" owner="keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:31.764291" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-02T13:35:31.765292" level="FAIL">Text 'No results found' did not appear in 10 seconds.</msg>
+<arg>No results found</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2024-12-02T13:35:21.484962" elapsed="10.286063">Text 'No results found' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-12-02T13:35:21.484762" elapsed="10.286736">Text 'No results found' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-12-02T13:35:31.771947" elapsed="0.000032"/>
+</kw>
+<status status="FAIL" start="2024-12-02T13:35:16.294465" elapsed="15.477652">Text 'No results found' did not appear in 10 seconds.</status>
+</test>
+<test id="s1-t6" name="Test Google Search For Common Term" line="43">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:31.773481" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:31.773298" elapsed="5.127551"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:36.903766" elapsed="0.744687"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:37.649410" elapsed="0.044621"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:31.773097" elapsed="5.921065"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:37.695021" level="INFO">Typing text 'Weather' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:37.694876" elapsed="0.169418"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:37.880217" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:35:38.171953" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:35:38.172003" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:37.864637" elapsed="0.685831"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:38.550597" elapsed="1.251770"/>
+</kw>
+<arg>Weather</arg>
+<status status="PASS" start="2024-12-02T13:35:37.694487" elapsed="2.108436"/>
+</kw>
+<kw name="Validate First Result Text" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:39.820361" level="INFO">${result} = National and Local Weather Radar, Daily Forecast, Hurricane ...</msg>
+<var>${result}</var>
+<arg>${FIRST_RESULT_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:39.804850" elapsed="0.015539"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-02T13:35:39.820516" elapsed="0.000158"/>
+</kw>
+<arg>Weather</arg>
+<status status="PASS" start="2024-12-02T13:35:39.803948" elapsed="0.016765"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:39.820823" elapsed="0.109912"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:31.772259" elapsed="8.158862"/>
+</test>
+<test id="s1-t7" name="Test Google Search For Company" line="50">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:39.932426" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:39.932241" elapsed="3.053380"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:42.987734" elapsed="0.390105"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:43.378480" elapsed="0.029926"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:39.932031" elapsed="3.476526"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:43.409826" level="INFO">Typing text 'OpenAI' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:43.409638" elapsed="0.156967"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:43.569931" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:35:43.850399" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:35:43.850532" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:43.566730" elapsed="1.851400"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:45.419081" elapsed="0.018719"/>
+</kw>
+<arg>OpenAI</arg>
+<status status="PASS" start="2024-12-02T13:35:43.409302" elapsed="2.028626"/>
+</kw>
+<kw name="Validate First Result Text" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:45.453986" level="INFO">${result} = Chat GPT API</msg>
+<var>${result}</var>
+<arg>${FIRST_RESULT_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:45.438393" elapsed="0.015619"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2024-12-02T13:35:45.454386" level="FAIL">'Chat GPT API' does not contain 'OpenAI'</msg>
+<arg>${result}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2024-12-02T13:35:45.454125" elapsed="0.000358">'Chat GPT API' does not contain 'OpenAI'</status>
+</kw>
+<arg>OpenAI</arg>
+<status status="FAIL" start="2024-12-02T13:35:45.438161" elapsed="0.016403">'Chat GPT API' does not contain 'OpenAI'</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-12-02T13:35:45.454685" elapsed="0.000015"/>
+</kw>
+<status status="FAIL" start="2024-12-02T13:35:39.931729" elapsed="5.523074">'Chat GPT API' does not contain 'OpenAI'</status>
+</test>
+<test id="s1-t8" name="Test Google Search For Specific URL" line="57">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:45.455411" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:45.455301" elapsed="4.831708"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:50.287993" elapsed="0.630547"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:50.918746" elapsed="0.017490"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:45.455177" elapsed="5.481168"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:50.937059" level="INFO">Typing text 'https://www.wikipedia.org' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:50.936903" elapsed="0.139878"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:51.082433" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:35:51.365420" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:35:51.365471" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:51.077019" elapsed="1.437916"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:52.515978" elapsed="0.015561"/>
+</kw>
+<arg>https://www.wikipedia.org</arg>
+<status status="PASS" start="2024-12-02T13:35:50.936653" elapsed="1.595002"/>
+</kw>
+<kw name="Validate First Result Text" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:52.550334" level="INFO">${result} = Wikipedia</msg>
+<var>${result}</var>
+<arg>${FIRST_RESULT_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:52.532145" elapsed="0.018235"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-02T13:35:52.550560" elapsed="0.000281"/>
+</kw>
+<arg>Wikipedia</arg>
+<status status="PASS" start="2024-12-02T13:35:52.531902" elapsed="0.018992"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:52.551094" elapsed="0.119317"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:45.454975" elapsed="7.215620"/>
+</test>
+<test id="s1-t9" name="Test Google Search For Popular Technology" line="64">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:52.671351" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:52.671188" elapsed="2.982964"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:35:55.655584" elapsed="0.382843"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:56.038888" elapsed="0.012405"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:52.671017" elapsed="3.380368"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:56.052049" level="INFO">Typing text 'Python programming' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:56.051914" elapsed="0.123723"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:56.179053" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:35:56.451095" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:35:56.451203" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:56.175845" elapsed="0.437426"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:35:56.613733" elapsed="1.347675"/>
+</kw>
+<arg>Python programming</arg>
+<status status="PASS" start="2024-12-02T13:35:56.051674" elapsed="1.909808"/>
+</kw>
+<kw name="Validate First Result Text" owner="keywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:57.973331" level="INFO">${result} = Welcome to Python.org</msg>
+<var>${result}</var>
+<arg>${FIRST_RESULT_TEXT}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:35:57.961860" elapsed="0.011496"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${expected_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-12-02T13:35:57.973465" elapsed="0.000121"/>
+</kw>
+<arg>Python</arg>
+<status status="PASS" start="2024-12-02T13:35:57.961671" elapsed="0.011952"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-02T13:35:57.973709" elapsed="0.089352"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:52.670772" elapsed="5.392439"/>
+</test>
+<test id="s1-t10" name="Test Google Search For Invalid Term" line="71">
+<kw name="Open Google" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:35:58.063882" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-02T13:35:58.063758" elapsed="3.297907"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-02T13:36:01.362302" elapsed="0.386383"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:36:01.749620" elapsed="0.013647"/>
+</kw>
+<status status="PASS" start="2024-12-02T13:35:58.063580" elapsed="3.699836"/>
+</kw>
+<kw name="Search For Term" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:36:01.764376" level="INFO">Typing text 'zyxwvutsrqponmlkjihgfedcba1234567890' into text field 'name=q'.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-02T13:36:01.764211" elapsed="0.146203"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:36:01.910942" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
+<msg time="2024-12-02T13:36:02.182519" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-12-02T13:36:02.182594" level="INFO">Releasing special key ENTER.</msg>
+<arg>${SEARCH_FIELD}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-12-02T13:36:01.910551" elapsed="0.424351"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_RESULT_TEXT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-02T13:36:02.335154" elapsed="1.979975"/>
+</kw>
+<arg>zyxwvutsrqponmlkjihgfedcba1234567890</arg>
+<status status="PASS" start="2024-12-02T13:36:01.763923" elapsed="2.551393"/>
+</kw>
+<kw name="Validate Search Results Not Found" owner="keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2024-12-02T13:36:14.762725" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-02T13:36:14.763265" level="FAIL">Text 'No results found' did not appear in 10 seconds.</msg>
+<arg>No results found</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2024-12-02T13:36:04.315831" elapsed="10.449998">Text 'No results found' did not appear in 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-12-02T13:36:04.315603" elapsed="10.450499">Text 'No results found' did not appear in 10 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-12-02T13:36:14.766686" elapsed="0.000042"/>
+</kw>
+<status status="FAIL" start="2024-12-02T13:35:58.063362" elapsed="16.703503">Text 'No results found' did not appear in 10 seconds.</status>
+</test>
+<status status="FAIL" start="2024-12-02T13:34:56.366845" elapsed="78.400361"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="6" fail="4" skip="0" id="s1" name="Google Search">Google Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
